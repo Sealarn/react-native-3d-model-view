@@ -55,7 +55,7 @@ class RN3DViewManager extends ViewGroupManager<RN3DView> {
     view.setLightEnabled(lightEnabled);
   }
 
-  @ReactProp(name = "lightEnabled")
+  @ReactProp(name = "lightRotating")
   public void setLightRotating(final RN3DView view, final boolean lightRotating) {
       view.setLightRotating(lightRotating);
   }
