@@ -73,7 +73,7 @@ public class SceneLoader {
 	/**
 	 * Light toggle feature: whether to draw using lights
 	 */
-	private boolean drawLighting = false;
+	private boolean drawLighting = true;
 	/**
 	 * Object selected by the user
 	 */
