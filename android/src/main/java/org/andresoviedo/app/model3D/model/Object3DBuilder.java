@@ -49,6 +49,7 @@ public final class Object3DBuilder {
 	 * Default vertices colors
 	 */
 	private static float[] DEFAULT_COLOR = {1.0f, 1.0f, 0, 1.0f};
+	private static float[] NO_COLOR = {0, 0, 0, 0};
 
 	final static float[] axisVertexLinesData = new float[]{
 			//@formatter:off
@@ -332,7 +333,7 @@ public final class Object3DBuilder {
 
 	public static Object3DData buildPoint(float[] point) {
 		return new Object3DData(createNativeByteBuffer(point.length * 4).asFloatBuffer().put(point))
-				.setDrawMode(GLES20.GL_TRIANGLES).setId("Point");
+				.setDrawMode(GLES20.GL_POINTS).setId("Point");
 	}
 
 	public static Object3DData buildLine(float[] line) {
