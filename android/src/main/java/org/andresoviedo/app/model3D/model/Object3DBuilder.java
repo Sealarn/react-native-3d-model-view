@@ -332,7 +332,7 @@ public final class Object3DBuilder {
 
 	public static Object3DData buildPoint(float[] point) {
 		return new Object3DData(createNativeByteBuffer(point.length * 4).asFloatBuffer().put(point))
-				.setDrawMode(GLES20.GL_POINTS).setScale(0).setId("Point");
+				.setDrawMode(GLES20.GL_TRIANGLES).setId("Point");
 	}
 
 	public static Object3DData buildLine(float[] line) {
