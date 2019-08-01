@@ -27,6 +27,8 @@ public class RN3DView extends RelativeLayout {
     private Context context;
     private String modelSrc;
     private String textureSrc;
+    private boolean lightEnabled = true;
+    private boolean lightRotating = false;
     private float[] backgroundColor;
     private float scale = 1f;
     private boolean autoPlay = true;
@@ -39,7 +41,7 @@ public class RN3DView extends RelativeLayout {
 
     private void tryInitScene() {
         if (context != null && modelSrc != null && textureSrc != null && backgroundColor != null) {
-            this.modelView = new ModelSurfaceView(context, this, modelSrc, textureSrc, backgroundColor);
+            this.modelView = new ModelSurfaceView(context, this, modelSrc, textureSrc, backgroundColor, lightEnabled, lightRotating);
             RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
             layoutParams.addRule(CENTER_IN_PARENT);
             this.modelView.setLayoutParams(layoutParams);
@@ -60,6 +62,16 @@ public class RN3DView extends RelativeLayout {
 
     public void setTextureSrc(final String textureSrc) {
         this.textureSrc = textureSrc;
+        this.tryInitScene();
+    }
+
+    public void setLightEnabled(final boolean lightEnabled) {
+        this.lightEnabled = lightEnabled;
+        this.tryInitScene();
+    }
+
+    public void setLightRotating(final boolean lightRotating) {
+        this.lightRotating = lightRotating;
         this.tryInitScene();
     }
 

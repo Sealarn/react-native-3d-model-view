@@ -35,7 +35,7 @@ public class ModelSurfaceView extends GLSurfaceView {
 	private float[] backgroundColor;
 	private float scale;
 
-	public ModelSurfaceView(Context context, RN3DView parent, String modelSrc, String textureSrc, float[] backgroundColor) {
+	public ModelSurfaceView(Context context, RN3DView parent, String modelSrc, String textureSrc, float[] backgroundColor, boolean lightEnabled, boolean lightRotating) {
 		super(context);
 		this.parent = parent;
 
@@ -59,7 +59,7 @@ public class ModelSurfaceView extends GLSurfaceView {
 		handler = new Handler(context.getMainLooper());
 
 		scene = new SceneLoader(this, context);
-		scene.init(modelSrc, textureSrc);
+		scene.init(modelSrc, textureSrc, lightEnabled, lightRotating);
 	}
 
 	@Override

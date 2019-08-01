@@ -97,10 +97,13 @@ public class SceneLoader {
 		this.animator = new Animator(parent);
 	}
 
-	public void init(final String modelPath, final String texturePath) {
+	public void init(final String modelPath, final String texturePath, final boolean isLightEnabled, final boolean isLightRotationEnabled) {
 		final URL modelUrl;
 		final URL textureUrl;
 		try {
+			drawLighting = isLightEnabled;
+			rotatingLight = isLightRotationEnabled;
+			
 			if (modelPath.startsWith("http")) {
 				modelUrl = new URL(modelPath);
 			} else {

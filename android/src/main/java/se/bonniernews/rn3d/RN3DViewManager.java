@@ -50,6 +50,16 @@ class RN3DViewManager extends ViewGroupManager<RN3DView> {
     view.setTextureSrc(textureSrc);
   }
 
+  @ReactProp(name = "lightEnabled")
+  public void setLightEnabled(final RN3DView view, final boolean lightEnabled) {
+    view.setLightEnabled(lightEnabled);
+  }
+
+  @ReactProp(name = "lightEnabled")
+  public void setLightRotating(final RN3DView view, final boolean lightRotating) {
+      view.setLightRotating(lightRotating);
+  }
+
   @ReactProp(name = "backgroundColor", customType = "Color")
   public void setBackgroundColor(final RN3DView view, final Integer color) {
     view.setBackgroundColor(color);
