@@ -81,7 +81,7 @@ public class SceneLoader {
 	/**
 	 * Initial light position
 	 */
-	private final float[] lightPosition = new float[]{0, 0, 6, 1};
+	private final float[] lightPosition = new float[]{6, 6, 6, 1};
 	/**
 	 * Light bulb 3d data
 	 */
@@ -103,7 +103,7 @@ public class SceneLoader {
 		try {
 			drawLighting = isLightEnabled;
 			rotatingLight = isLightRotationEnabled;
-			
+
 			if (modelPath.startsWith("http")) {
 				modelUrl = new URL(modelPath);
 			} else {
