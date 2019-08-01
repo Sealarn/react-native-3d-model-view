@@ -32,6 +32,9 @@ public class ModelSurfaceView extends GLSurfaceView {
 
 	private String modelSrc;
 	private String textureSrc;
+	private boolean lightEnabled;
+	private boolean lightRotating;
+
 	private float[] backgroundColor;
 	private float scale;
 
@@ -42,7 +45,8 @@ public class ModelSurfaceView extends GLSurfaceView {
 		this.modelSrc = modelSrc;
 		this.textureSrc = textureSrc;
 		this.backgroundColor = backgroundColor;
-
+		this.lightEnabled = lightEnabled;
+		this.lightRotating = lightRotating;
 		// Create an OpenGL ES 2.0 context.
 		setEGLContextClientVersion(2);
 
