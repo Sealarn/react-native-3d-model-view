@@ -87,7 +87,7 @@ public class ModelSurfaceView extends GLSurfaceView {
 
 	private void tryInitScene() {
 		if (modelSrc != null && textureSrc != null && backgroundColor != null) {
-			scene.init(modelSrc, textureSrc);
+			scene.init(modelSrc, textureSrc, lightEnabled, lightRotating);
 		}
 	}
 
